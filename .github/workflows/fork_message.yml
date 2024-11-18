@@ -1,0 +1,10 @@
+name: Fork Message
+run-name: This guy @${{ github.actor }} forked the repo
+on:
+  fork
+jobs:
+  Fork-Message:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Yoo bossu bossu, @${{ github.actor }} 😡 don't fuck with my shit 💩 bro."
+      - run: echo "Abeg use condom!!!"
