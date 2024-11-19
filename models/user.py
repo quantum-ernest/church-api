@@ -1,5 +1,4 @@
 from datetime import datetime
-from enum import member
 from typing import Optional
 
 from pydantic import EmailStr
