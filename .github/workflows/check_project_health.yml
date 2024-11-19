@@ -1,0 +1,26 @@
+name: Check Project Health
+run-name: Check if FastAPI runs successfully
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Run-starter-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Run Docker compose
+        run: |
+          docker compose up
+
+      - name: Check containers
+        run: |
+          docker ps
+
+
+      - name: Clean Up
+        if: always()
+        run: |
+          docker system prune -a -f
